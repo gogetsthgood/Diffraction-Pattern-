@@ -47,8 +47,8 @@ mid = intensity.shape[0] // 2
 profile = intensity[mid, :]
 profile /= np.max(profile)
 
-peaks, _ = find_peaks(profile, height=0.05)
-if len(peaks) >= 2:
+peaks, _ = find_peaks(profile, height=0.01)
+if len(peaks) >= 1:
     peak_spacing_px = np.mean(np.diff(peaks))
     peak_spacing_m = (x_m[1] - x_m[0]) * peak_spacing_px
 else:
